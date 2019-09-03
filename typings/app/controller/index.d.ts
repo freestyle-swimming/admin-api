@@ -4,14 +4,16 @@
 import 'egg';
 import ExportAuth from '../../../app/controller/auth';
 import ExportCommon from '../../../app/controller/common';
-import ExportHome from '../../../app/controller/home';
+import ExportPermission from '../../../app/controller/permission';
+import ExportRole from '../../../app/controller/role';
 import ExportUser from '../../../app/controller/user';
 
 declare module 'egg' {
   interface IController {
     auth: ExportAuth;
     common: ExportCommon;
-    home: ExportHome;
+    permission: ExportPermission;
+    role: ExportRole;
     user: ExportUser;
   }
 }

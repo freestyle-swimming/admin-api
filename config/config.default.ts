@@ -1,4 +1,5 @@
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
+import { redisConfig } from './secretConfig';
 
 export default (appInfo: EggAppInfo) => {
   const config = {} as PowerPartial<EggAppConfig>;
@@ -22,12 +23,7 @@ export default (appInfo: EggAppInfo) => {
     },
   };
   config.redis = {
-    client: {
-      port: 9999,          // Redis port
-      host: '123.56.11.90',   // Redis host
-      password: 'wT9xupwhkc',
-      db: 6,
-    },
+    client: redisConfig,
   };
   config.jwt = {
     secret: 'admin-api',

@@ -2,15 +2,17 @@
 // Do not modify this file!!!!!!!!!
 
 import 'egg';
-import ExportTest from '../../../app/service/Test';
 import ExportJwt from '../../../app/service/jwt';
+import ExportPermission from '../../../app/service/permission';
+import ExportRole from '../../../app/service/role';
 import ExportUser from '../../../app/service/user';
 import ExportVerify from '../../../app/service/verify';
 
 declare module 'egg' {
   interface IService {
-    test: ExportTest;
     jwt: ExportJwt;
+    permission: ExportPermission;
+    role: ExportRole;
     user: ExportUser;
     verify: ExportVerify;
   }
