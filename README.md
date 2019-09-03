@@ -1,5 +1,5 @@
 # admin-api
-基于eggjs，mongodb，redis使用Typescript开发；配合[https://github.com/freestyle-swimming/ant-design-vue-admin],[https://github.com/freestyle-swimming/ant-design-react-admin]实现管理系统权限管理及设置；
+基于eggjs，mongodb，redis使用Typescript开发；配合[https://github.com/freestyle-swimming/ant-design-vue-admin];[https://github.com/freestyle-swimming/ant-design-react-admin]实现管理系统权限管理及设置；
 
 ## 主要功能
 1.登录授权(token)
