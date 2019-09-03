@@ -30,6 +30,14 @@ const plugin: EggPlugin = {
     enable: true,
     package: 'egg-socket.io',
   },
+  jwt: {
+    enable: true,
+    package: 'egg-jwt',
+  },
+  verifyCode: {
+    enable: true,
+    package: 'egg-verify-code',
+  },
 };
 
 export default plugin;

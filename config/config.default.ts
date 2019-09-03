@@ -29,6 +29,17 @@ export default (appInfo: EggAppInfo) => {
       db: 6,
     },
   };
+  config.jwt = {
+    secret: 'admin-api',
+  };
+  config.jwtExpire = 60 * 60 * 48;
+  config.verifyCode = {
+    canvas: {
+      width: 100,
+      height: 30,
+    },
+    font: '24px "微软雅黑"',
+  };
   // add your special config in here
   const bizConfig = {
     sourceUrl: `https://github.com/eggjs/examples/tree/master/${appInfo.name}`,

@@ -20,6 +20,8 @@ import 'egg-redis';
 import 'egg-cors';
 import 'egg-validate';
 import 'egg-socket.io';
+import 'egg-jwt';
+import 'egg-verify-code';
 import { EggPluginItem } from 'egg';
 declare module 'egg' {
   interface EggPlugin {
@@ -41,5 +43,7 @@ declare module 'egg' {
     cors?: EggPluginItem;
     validate?: EggPluginItem;
     io?: EggPluginItem;
+    jwt?: EggPluginItem;
+    verifyCode?: EggPluginItem;
   }
 }
