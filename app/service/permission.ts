@@ -1,4 +1,4 @@
-import Service from '../../baseClass/Service';
+import Service from '../foundation/Bases/Service';
 
 export default class extends Service {
   constructor(ctx, name) {

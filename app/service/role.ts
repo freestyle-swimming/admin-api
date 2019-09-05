@@ -1,4 +1,4 @@
-import Service from '../../baseClass/Service';
+import Service from '../foundation/Bases/Service';
 
 export default class extends Service {
   constructor(ctx, name) {
@@ -9,9 +9,9 @@ export default class extends Service {
     return this.model.find(q).populate(populate);
   }
   async getPermissionsByRoles(roles) {
-    const permissionArr:any[] = [];
+    const permissionArr: any[] = [];
     const res = await this.model.find({ _id: { $in: roles } }).populate({
-      path:'permissions',
+      path: 'permissions',
     });
     for (const permission of res) {
       const permissions = permission.permissions;

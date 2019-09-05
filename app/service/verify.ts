@@ -11,6 +11,8 @@ export default class extends Service {
   async verify(vid: number, code: string): Promise<boolean> {
     const id = `verifyCode:${vid}`;
     const res = await this.app.redis.get(id);
-    return res === code;
+    // 不区分大小写
+    if (res) return res.toUpperCase() === code.toUpperCase();
+    return false;
   }
 }

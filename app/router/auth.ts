@@ -5,4 +5,6 @@ export default (app: Application) => {
   const prefix = router.namespace(`/${prefixKey}`);
   // 登录获取token
   prefix.post('/token', controller.auth.token);
+  // 获取验证码
+  prefix.get('/verify-code', controller.common.verifyCode);
 };
