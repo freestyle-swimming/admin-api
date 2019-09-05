@@ -3,9 +3,10 @@ import Service from '../foundation/Bases/Service';
 export default class extends Service {
   async generateToken(userId: string) {
     const token = this.app.jwt.sign({ userId }, this.app.config.jwt.secret);
-    const id = `tokens:${this.ctx.helper.md5(token)}`;
+    const shortToken = this.ctx.helper.md5(token);
+    const id = `tokens:${shortToken}`;
     const expire = this.config.jwtExpire;
-    const tokenCfo = { token, userId, expire };
+    const tokenCfo = { token: shortToken, userId, expire };
     await this.app.redis.setex(id, expire, JSON.stringify(tokenCfo));
     return tokenCfo;
   }

@@ -12,7 +12,7 @@ export default class extends Controller {
     });
     // 验证验证码
     const verify = await this.ctx.service.verify.verify(vid, verifyCode);
-    if (!verify) return this.fail(9001, '验证码错误');
+    if (!verify) return this.fail(408, '验证码错误');
     const res = await this.ctx.service.user.findOne({
       mobile: username,
       password: this.ctx.helper.md5(password),

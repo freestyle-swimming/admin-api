@@ -12,8 +12,10 @@ export default (appInfo: EggAppInfo) => {
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
   };
   // add your egg config in here
-  config.middleware = [];
+  config.middleware = [ 'auth', 'exceptions' ];
   config.whitelist = [
+    '/auth/token',
+    '/auth/verify-code',
   ];
   config.permissionWhiteList = [
   ];

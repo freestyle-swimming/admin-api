@@ -6,4 +6,7 @@ export default class extends Service {
     super(ctx, name);
     this.name = 'user';
   }
+  async findAvailable(id) {
+    return this.findOne({ _id: id, status: 0 });
+  }
 }

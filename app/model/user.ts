@@ -17,6 +17,12 @@ export default (app: Application) => {
       required: true,
       get: (val: string) => moment(val).format('YYYY-MM-DD HH:mm:ss'),
     },
+    // 超级管理员
+    root: {
+      type: Boolean,
+      requied: true,
+      default: false,
+    },
     name: {
       type: String,
       required: true,
@@ -34,7 +40,7 @@ export default (app: Application) => {
     },
     roles: [{ type: ObjectId, default: 'manager' }],
     status: {
-      type: String,
+      type: Number,
       enum: userStatusEnu,
       default: 0, // 默认为0,1为暂停使用,3为删除
     },
@@ -60,5 +66,5 @@ export default (app: Application) => {
     site: 1,
     status: 1,
   });
-  return mongoose.model('user', schema, 'admin_user');
+  return mongoose.model('User', schema, 'admin_user');
 };
